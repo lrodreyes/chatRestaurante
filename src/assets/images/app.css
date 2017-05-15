@@ -1,0 +1,217 @@
+.miContainer{
+	margin-left:5vw;
+	margin-right: 5vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+body{
+	background-image: url("../images/Fondo.jpg");
+	font-family: 'Amatic SC', cursive;
+	font-weight: 700;
+}
+th, #bot{
+	font-size: 30px;
+}
+.brand-logo,.button-collapse, #logo{
+	font-family: 'Grand Hotel', cursive;
+}
+#letra{
+	font-family: 'Josefin Slab', serif;
+	font-weight: 700;
+}
+.brand-logo{
+	margin-left: 5%;
+}
+
+
+nav{
+	margin-top: 5%;
+}
+ul li a{
+	font-size: 20px;
+}
+
+pre {
+    background-color:#F1F1F1;
+    border:1px solid #00000;
+    padding:10px;
+    height: 300px;
+		width: 530px;
+    overflow-y: scroll;
+    overflow-x: auto;
+    margin:7px;
+    color:#3b3d3e;
+
+}
+
+.portada {
+    background-image: url("../images/FondoPortada.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#trans{
+	background-color: rgba(115, 109, 113, 0.68);
+}
+.img1{
+	background-image: url("../images/desayuno.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height:auto;
+}
+
+.img2{
+	background-image: url("../images/comi.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.img3{
+	background-image: url("../images/cenas.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.img4{
+	background-image: url("../images/portada.png");
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+.carta{
+	display: flex;
+	margin-top: 10px;
+	flex-direction: column;
+
+}
+
+.columna{
+	display: flex;
+}
+.card{
+	margin-right:1%;
+	margin-left:1%;
+	flex-grow: 1;
+}
+#tabla{
+	font-size: 20px;
+}
+
+#t {
+    font-family: 'Josefin Slab', serif;
+    font-size: 30px;
+}
+
+#orden{
+	background-color: white;
+}
+/* Small screens */
+@media all and (max-width: 500px) {
+  .columna {
+    /* On small screens, we are no longer using row direction but column */
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+h4 {
+  margin: 5px 20px;
+}
+
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(205, 205, 205, 0.3);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-box {
+  width: 85%;
+  margin-top: 50px;
+  background: #fff;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.comment-box p {
+  margin: 0 30px 15px;
+  font-weight: 300;
+  color: #333;
+  word-wrap: break-word;
+  background: #EEE;
+  padding: 5px 10px;
+}
+.comment-box span{
+	float: right;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.header {
+	font-family: 'Josefin Slab', serif;
+  margin: 15px 20px;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+form {
+  margin: 10px 10px 30px 10px;
+}
+form ::-webkit-input-placeholder {
+  color: #CCC;
+  font-weight: 300;
+}
+
+input[type="text"], textarea {
+	font-family: 'Josefin Slab', serif;
+	font-size: 20px;
+  margin: 5px 10px;
+  outline: none;
+  background: #595959;
+  border: 0;
+  padding: 10px;
+}
+
+textarea {
+  resize: none;
+  width: 85%;
+	height: 200px;
+}
+
+input[type="text"] {
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+button {
+  font-weight: 400;
+  margin: 12px 0 0 10px;
+  border: 0;
+  color: #fff;
+  font-size: 15px;
+  background: #b51915;
+  padding: 12px 20px 12px 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+button:hover {
+  background: #D3775D;
+}
+
+.footer p {
+  float: right;
+  font-size: 13px;
+  margin-bottom: 10px;
+  background: #FFF;
+}

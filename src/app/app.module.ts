@@ -12,12 +12,20 @@ import { APP_ROUTING } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/share/navbar/navbar.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    PedidosComponent,
+    ComentariosComponent,
+    ContactoComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
