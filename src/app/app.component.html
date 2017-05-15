@@ -1,3 +1,5 @@
-<h1>
-  {{title}}
-</h1>
+<ul>
+  <li class="text" *ngFor="let comentario of comentarios | async">
+    {{comentario | json}}
+  </li>
+</ul>
