@@ -1,8 +1,8 @@
 export const firebaseConf = {
-	apiKey: "AIzaSyCoP1JuA4KkvgtJPx5II1j9C2vV9sbak8o",
-    authDomain: "menu-restaurante.firebaseapp.com",
-    databaseURL: "https://menu-restaurante.firebaseio.com",
-    projectId: "menu-restaurante",
-    storageBucket: "menu-restaurante.appspot.com",
-    messagingSenderId: "327373634763"
+	apiKey: "AIzaSyAtCoRjmmWPrk7U6uXVtR6A9Pm-2_c-tFo",
+    authDomain: "chat-4292c.firebaseapp.com",
+    databaseURL: "https://chat-4292c.firebaseio.com",
+    projectId: "chat-4292c",
+    storageBucket: "chat-4292c.appspot.com",
+    messagingSenderId: "406982086407"
 }

@@ -4,3 +4,13 @@ body{
 	font-family: 'Amatic SC', cursive;
 	font-weight: 700;
 }
+
+.miContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: space-around;
+
+	margin-left: 5vw;
+	margin-right: 5vw;
+}
