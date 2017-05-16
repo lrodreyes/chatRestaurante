@@ -7,3 +7,16 @@
 	margin-left: 5vw;
 	margin-right: 5vw;
 }
+
+.container-column{
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.btn-large{
+	margin-top: 1px;
+}
+

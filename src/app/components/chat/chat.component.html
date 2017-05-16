@@ -1,0 +1,10 @@
+<div class="container-chat">
+	<div id="hola"class="app-mensajes">
+
+	</div>
+	<input [(ngModel)]="mensaje"
+	        name="mensaje"
+	        (keyup.enter)="enviar()"
+	        placeholder="mensaje...">
+	<a class="waves-effect waves-light btn-large" (click)="enviar()">Enviar</a>
+</div>

@@ -1,0 +1,17 @@
+.app-mensajes{
+  overflow-y:scroll;
+  height:60vh;
+  width: 30vw;
+  background:white;
+  padding: 5px;
+}
+
+.container-chat{
+	display: flex;
+	flex-direction: column;
+
+	height: 60vh;
+	width: 30vw;
+
+	background-color: blue;
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+// import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { LoginService } from "./services/login.service";
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,17 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  comentarios: FirebaseListObservable<any[]>;
+  // comentarios: FirebaseListObservable<any[]>;
 
-  constructor(db: AngularFireDatabase) {
-    this.comentarios = db.list('/comentarios');
+  constructor(public _ls:LoginService) { //AQUI SE INICIALIZA LA CLASE DEL SERVICIO
+    // this.comentarios = db.list('/comentarios');
+  }
 
+  login(){
+  	this._ls.login();
+  }
 
+  logout(){
+  	this._ls.logout();
   }
 }
