@@ -11,7 +11,11 @@ export class ChatComponent implements OnInit {
 	elemento:any;
 
   constructor(public _ls:LoginService) {
-
+    this._ls.cargarMensajes()
+        .subscribe( ()=>{
+      console.log("Mensajes cargados....");
+      setTimeout( ()=>this.elemento.scrollTop=this.elemento.scrollHeight, 50);
+    })
   }
 
   ngOnInit() {
