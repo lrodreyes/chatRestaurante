@@ -38,7 +38,10 @@ export class LoginService {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider(),)
       .then(result=>{
 
-
+        this.db.list('/usuarios').update(result.user.uid,{
+          uid:result.user.uid,
+          nombre:result.user.displayName
+        });
        // var token = result.credential.accessToken;
        // The signed-in user info.
        // this.user = result;
