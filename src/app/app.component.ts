@@ -21,4 +21,12 @@ export class AppComponent {
   logout(){
   	this._ls.logout();
   }
+
+  loginAdministrador(){
+    this._ls.loginAdministrador();
+  }
+
+  logoutAdministrador(){
+    this._ls.logoutAdministrador();
+  }
 }

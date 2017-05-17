@@ -1,30 +1,28 @@
 <div class="miContainer">
-<ng-container *ngIf="_ls.user=='administrador'">
-	<div class="listado-chats" >
-		<div *ngFor="let chat of _ls.chats | async">
-			{{chat |json}}
-		</div>
+	<!-- Todos los chats -->
+	<div>
+		Aqui iran todo los demas mensajes
 	</div>
-</ng-container>
 
+	<!-- Chat actual -->
 	<div class="container-chat">
 		<div id="app-mensajes" class="app-mensajes">
 			<div *ngFor="let mensaje of _ls.mensajes | async">
 
 		    <!-- <span class="badge" [ngClass]="{ 'badge-primary': _cs.usuario.uid == chat.uid,
 		                                     'badge-success': _cs.usuario.uid != chat.uid }"> -->
-		     	<span>
-			      {{ mensaje.mensaje }}
-			    </span>
-			    <p>
-			      {{ mensaje.mensaje }}
-			    </p>
-			</div>
+	     	<span>
+		      {{ mensaje.nombre }}
+		    </span>
+		    <p>
+		      {{ mensaje.mensaje }}
+		    </p>
 		</div>
-		<input [(ngModel)]="mensaje"
+	</div>
+	<input [(ngModel)]="mensaje"
 		        name="mensaje"
 		        (keyup.enter)="enviar()"
 		        placeholder="mensaje...">
-		<a class="waves-effect waves-light btn-large" (click)="enviar()">Enviar</a>
-	</div>
+	<a class="waves-effect waves-light btn-large" (click)="enviar()">Enviar</a>
+</div>
 </div>

@@ -6,35 +6,44 @@ import * as firebase from 'firebase/app';
 
 @Injectable()
 export class LoginService {
-  user: any={};
+  user: any;
   mensajes; 
+  chats;//ALMACENA LAS CONVERSACIONES CON LOS DIFERENTES USUARIOS
   // comentarios: FirebaseListObservable<any[]>;
 
   constructor(public db: AngularFireDatabase,
           public afAuth: AngularFireAuth) {
  
           //SE CHECA SI HAY UN USUARIO LOGEADO EN LOCALSTORAGE
-          if( localStorage.getItem('user') ){
-              // Usuario logeado
+          if( localStorage.getItem('user')){
+
+              if(localStorage.getItem('user')!='administrador'){//MIENTRAS SEA DIFERENTE DE ADMINISTRADOR
               //SE OBTIENE DE LOCALSTORAGE Y SE ALMACENA EN LA VARIABLE USER
               this.user = JSON.parse(localStorage.getItem('user'));
               //SE ESTABLECE LA RUTA EN LA CUAL ESTARAN GUARDADOS LOS MENSAJES DEL USUARIO
               this.mensajes = db.list('/chats/'+this.user.user.uid);
+              }else{
+                this.user = localStorage.getItem('user');
+                //AQUI ESTABLECER LA OTRA RUTA
+              }
             }else{
               this.user = null;
             }
+
+            console.log(this.user);
   }
   
   // AUTENTICACION CON GOOGLE
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider(),)
       .then(result=>{
+        
 
         // var token = result.credential.accessToken;
        // The signed-in user info.
        // this.user = result;
 
-       console.log(result);
+       // console.log(result);
        this.user=result;
        //UNA VEZ QUE EL USUARIO SE AUTENTICA Y SE OBTIENEN SUS DATOS SE ALMACENAN EN LOCALSTORAGE
        localStorage.setItem('user', JSON.stringify(result) );
@@ -71,4 +80,31 @@ export class LoginService {
     console.log(this.mensajes);
     return this.mensajes;
   }
+
+  cargarChats(){
+    this.chats = this.db.list('/chats',{
+      query:{
+        orderByKey:true
+      }
+    });
+
+    return this.chats;
+  }
+
+  loginAdministrador(){
+    this.logout();
+    this.user="administrador"
+    localStorage.setItem('user',this.user);
+    console.log(this.user);
+  }
+
+  logoutAdministrador(){
+    console.log("adm deslogueado");
+    localStorage.removeItem('user');
+    this.user=null;
+    console.log(this.user);
+  }
+
 }
+
+

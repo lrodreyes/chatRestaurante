@@ -9,13 +9,21 @@ import { LoginService } from '../../services/login.service';
 export class ChatComponent implements OnInit {
 	mensaje:string="";
 	elemento:any;
+  chats;
 
   constructor(public _ls:LoginService) {
-    this._ls.cargarMensajes()
-        .subscribe( ()=>{
-      console.log("Mensajes cargados....");
-      setTimeout( ()=>this.elemento.scrollTop=this.elemento.scrollHeight, 50);
-    })
+    if(this._ls.user!="administrador"){
+
+     this._ls.cargarMensajes().subscribe( ()=>{
+        console.log("Mensajes cargados....");
+        setTimeout( ()=>this.elemento.scrollTop=this.elemento.scrollHeight, 50);
+      })
+    }else if(this._ls.user="administrador"){
+      this.chats=this._ls.cargarChats().subscribe( ()=>{
+        console.log("Chats cargados...");
+        console.log(this.chats);
+      })
+    }
   }
 
   ngOnInit() {
