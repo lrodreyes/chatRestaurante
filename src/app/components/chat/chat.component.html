@@ -1,7 +1,7 @@
 
 <div class="miContainer">
 <ng-container *ngIf="_ls.user=='administrador'">
-	<div class="listado-chats grey lighten-1">
+	<div class="listado-chats grey lighten-1 center">
 		<span class="red-text text-darken-4" id="hola">Mensajes Recibidos</span>
 		<div *ngFor="let chat of _ls.chats | async">
 		<a (click)="consultar(chat.uid)" class="waves-effect waves-light btn-large red white-text" id="cambios">Responder a {{chat.nombre |json}}</a>
