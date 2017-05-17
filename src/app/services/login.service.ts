@@ -58,6 +58,7 @@ export class LoginService {
   logout() {
     localStorage.removeItem('user');
     this.user = null;
+    this.mensajes="";
     this.afAuth.auth.signOut().then(function(){
       console.log("sign-out successful");
     });

@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   logout(){
-  	this._ls.logout();
+  	this._ls.logout();  
   }
 
   loginAdministrador(){
