@@ -4,7 +4,7 @@
 	<div class="listado-chats grey lighten-1">
 		<span class="red-text text-darken-4" id="hola">Mensajes Recibidos</span>
 		<div *ngFor="let chat of _ls.chats | async">
-		<a (click)="consultar(chat.uid)" class="red white-text btn-large" id="cambios">Responder a {{chat.nombre |json}}</a>
+		<a (click)="consultar(chat.uid)" class="waves-effect waves-light btn-large red white-text" id="cambios">Responder a {{chat.nombre |json}}</a>
 
 		</div>
 	</div>
