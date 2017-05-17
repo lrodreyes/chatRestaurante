@@ -1,16 +1,17 @@
 
 <div class="miContainer">
 <ng-container *ngIf="_ls.user=='administrador'">
-	<div class="listado-chats" >
+	<div class="listado-chats grey lighten-1">
+		<span class="red-text text-darken-4" id="hola">Mensajes Recibidos</span>
 		<div *ngFor="let chat of _ls.chats | async">
-		<a (click)="consultar(chat.uid)">{{chat.nombre |json}}</a>
-			
+		<a (click)="consultar(chat.uid)" class="red white-text btn-large" id="cambios">Responder a {{chat.nombre |json}}</a>
+
 		</div>
 	</div>
 </ng-container>
 
 <div class="container-chat">
-	<div id="app-mensajes" class="app-mensajes">
+	<div id="app-mensajes" class="app-mensajes grey lighten-1">
 		<div *ngFor="let mensaje of _ls.mensajes | async">
 
 	    <!-- <span class="badge" [ngClass]="{ 'badge-primary': _cs.usuario.uid == chat.uid,
