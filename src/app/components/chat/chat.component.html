@@ -1,9 +1,18 @@
 
 <div class="miContainer">
+<!--ng-container es un contenedor que es utilizado en angular y ngIf es una directiva
+ que nos permite visualizar cierto tipo de contenido dependiendo si se cumple la condicional o no
+en este caso que _ls.user sea igual a administrador-->
 <ng-container *ngIf="_ls.user=='administrador'">
 	<div class="listado-chats grey lighten-1 center">
 		<span class="red-text text-darken-4" id="hola">Mensajes Recibidos</span>
+		<!--ngFor es una directiva ciclica que nos va a ayudar a obtener cada uno de los chats personalizados
+		con el pip async estamos indicando que solo queremos los mensajes sin codigo basura -->
 		<div *ngFor="let chat of _ls.chats | async">
+			<!--Aqui estamos indicando que cada chat lo va a mostrar en un boton con el nombre de la persona
+			que te envio el mensaje y al hacerle click va a visualizar el administrador el chat de esa persona
+	  	la parte del |JSON estamos indicando que no lo queremos en un archivo .json si no solo el valor
+			y al hacer click va a mandar a llamar al metodo consultar-->
 		<a (click)="consultar(chat.uid)" class="waves-effect waves-light btn-large red white-text" id="cambios">Responder a {{chat.nombre |json}}</a>
 
 		</div>
@@ -12,10 +21,11 @@
 
 <div class="container-chat">
 	<div id="app-mensajes" class="app-mensajes grey lighten-1">
+		<!--En esta linea ngFor nos va a permitir obtener los mensajes de la base de datos
+		 que se han enviado del lado del usuario para poder visualizarlos y de igual forma se utiliza el pip-->
 		<div *ngFor="let mensaje of _ls.mensajes | async">
-
 	    <!-- <span class="badge" [ngClass]="{ 'badge-primary': _cs.usuario.uid == chat.uid,
-	                                     'badge-success': _cs.usuario.uid != chat.uid }"> -->
+	    'badge-success': _cs.usuario.uid != chat.uid }"> -->
      	<span class="red darken-2 white-text">
 	      {{ mensaje.nombre }}
 	    </span>
