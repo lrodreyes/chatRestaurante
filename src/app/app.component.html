@@ -2,22 +2,26 @@
 	<app-navbar></app-navbar>
 
 	 <div class="right-align">
-		<a class="waves-effect waves-light btn-large ">Administrador</a>
+		<a class="waves-effect waves-light btn-large red darken-4">Administrador</a>
 	</div>
 
 	<ng-container *ngIf="!_ls.user">
 		<div class="container-column">
-			<a class="waves-effect waves-light btn-large" (click)="login()">Login</a> 
+			<h1 class="white-text">Ingresa y dejanos saber tus dudas</h1>
+			<a class="waves-effect waves-light btn-large red darken-4" (click)="login()">Login</a>
 		</div>
 	</ng-container>
-	
+
 	<ng-container *ngIf="_ls.user">
-		<a class="waves-effect waves-light btn-large" (click)="logout()">Logout</a> 
-		<div class="chat-window animated fadeIn fast">
-			<app-chat></app-chat>
+		<div class="container-column">
+			<a class="waves-effect waves-light btn-large red darken-4" (click)="logout()">Logout</a>
+			<div class="chat-window animated fadeIn fast">
+				<h3 class="white-text center">Chatea con nosotros</h3>
+				<app-chat></app-chat>
+			</div>
 		</div>
 	</ng-container>
-	
+
 </div>
 
 <!--

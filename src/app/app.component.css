@@ -9,7 +9,6 @@
 }
 
 .container-column{
-	height: 50vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -17,6 +16,7 @@
 }
 
 .btn-large{
-	margin-top: 1px;
+	font-family: 'Josefin Slab', serif;
+	font-size: 15px;
+	font-weight: 700;
 }
-

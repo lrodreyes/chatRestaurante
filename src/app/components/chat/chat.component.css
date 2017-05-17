@@ -1,19 +1,17 @@
 .app-mensajes{
   overflow-y:scroll;
-  height:60vh;
+  height:70vh;
   width: 30vw;
-  background:white;
-  padding: 5px;
+  background:rgb(196, 199, 200);
+  padding: 25px;
+  border-radius: 10px;
 }
 
 .container-chat{
 	display: flex;
 	flex-direction: column;
-
-	height: 60vh;
+	height: 70vh;
 	width: 30vw;
-
-	background-color: blue;
 }
 
 .chat-window{
@@ -21,8 +19,6 @@
   width: 300px;
   height: 400px;
   overflow: hidden;
-  border: 1px solid #4080FF;
-  border-radius: 20px;
 }
 .animated {
   -webkit-animation-duration: 1s;
@@ -38,4 +34,30 @@
 }
 .fadeIn {
   animation-name: fadeIn;
+}
+
+.btn-large{
+  font-family: 'Josefin Slab', serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+input{
+  font-size: 20px;
+  outline: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 0;
+  border-radius: 10px;
+}
+span{
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+p{
+  padding: 5px;
+  font-family: 'Josefin Slab', serif;
+	font-size: 18px;
+  border-radius: 5px;
 }
