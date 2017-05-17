@@ -1,0 +1,28 @@
+<div class="miContainer">
+	<!-- Todos los chats -->
+	<div>
+		Aqui iran todo los demas mensajes
+	</div>
+
+	<!-- Chat actual -->
+	<div class="container-chat">
+		<div id="app-mensajes" class="app-mensajes">
+			<div *ngFor="let mensaje of _ls.mensajes | async">
+
+		    <!-- <span class="badge" [ngClass]="{ 'badge-primary': _cs.usuario.uid == chat.uid,
+		                                     'badge-success': _cs.usuario.uid != chat.uid }"> -->
+	     	<span>
+		      {{ mensaje.nombre }}
+		    </span>
+		    <p>
+		      {{ mensaje.mensaje }}
+		    </p>
+		</div>
+	</div>
+	<input [(ngModel)]="mensaje"
+		        name="mensaje"
+		        (keyup.enter)="enviar()"
+		        placeholder="mensaje...">
+	<a class="waves-effect waves-light btn-large" (click)="enviar()">Enviar</a>
+</div>
+</div>

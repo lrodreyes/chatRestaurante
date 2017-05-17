@@ -1,3 +1,13 @@
+
+<div class="miContainer">
+<ng-container *ngIf="_ls.user=='administrador'">
+	<div class="listado-chats" >
+		<div *ngFor="let chat of _ls.chats | async">
+			{{chat |json}}
+		</div>
+	</div>
+</ng-container>
+
 <div class="container-chat">
 	<div id="app-mensajes" class="app-mensajes">
 		<div *ngFor="let mensaje of _ls.mensajes | async">
@@ -12,10 +22,12 @@
 	    </p>
 	 	</div>
 	</div>
+
 	<input [(ngModel)]="mensaje"
 	        name="mensaje"
 	        (keyup.enter)="enviar()"
 	        placeholder="Deja tu mensaje..."
 					class="grey darken-4 center white-text">
 	<a class="waves-effect waves-light btn-large red darken-4" (click)="enviar()">Enviar</a>
+</div>
 </div>

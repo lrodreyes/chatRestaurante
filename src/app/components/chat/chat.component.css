@@ -35,7 +35,17 @@
 .fadeIn {
   animation-name: fadeIn;
 }
+.listado-chats{
+	background-color: white;
+	height: 60vh;
+	width: 30vw;
+}
 
+.miContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
 .btn-large{
   font-family: 'Josefin Slab', serif;
   font-size: 15px;

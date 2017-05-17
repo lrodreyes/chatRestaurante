@@ -1,8 +1,8 @@
 <div class="miContainer">
 	<app-navbar></app-navbar>
 
-	 <div class="right-align">
-		<a class="waves-effect waves-light btn-large red darken-4">Administrador</a>
+	 <div class="right-align" *ngIf="!administrador && !_ls.user">
+		<a class="waves-effect waves-light btn-large red darken-4" (click)="loginAdministrador()">Administrador</a>
 	</div>
 
 	<ng-container *ngIf="!_ls.user">
@@ -23,6 +23,7 @@
 	</ng-container>
 
 </div>
+
 
 <!--
  <ul>
