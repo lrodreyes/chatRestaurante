@@ -1,3 +1,7 @@
+.derecha{
+  background-color: blue;
+}
+
 .app-mensajes, .listado-chats{
   overflow-y:scroll;
   height:70vh;
