@@ -9,6 +9,7 @@ import { LoginService } from '../../services/login.service';
 export class ChatComponent implements OnInit {
 	mensaje:string="";
 	elemento:any;
+  uid='';
   chats;
 
   constructor(public _ls:LoginService) {
@@ -17,12 +18,13 @@ export class ChatComponent implements OnInit {
      this._ls.cargarMensajes().subscribe( ()=>{
         console.log("Mensajes cargados....");
         setTimeout( ()=>this.elemento.scrollTop=this.elemento.scrollHeight, 50);
-      })
+      });
     }else if(this._ls.user="administrador"){
       this.chats=this._ls.cargarChats().subscribe( ()=>{
         console.log("Chats cargados...");
         console.log(this.chats);
-      })
+      });
+
     }
   }
 
@@ -36,13 +38,27 @@ export class ChatComponent implements OnInit {
   		return;
   	}
 
-  	// console.log("este mensaje se enviara: ",this.mensaje);
     this._ls.agregarMensaje(this.mensaje);
   	this.mensaje="";
   }
 
+  enviarAdm(){
+    if(this.mensaje.length == 0){
+      return;
+    }
+
+    this._ls.agregarMensajeAdm(this.mensaje,this.uid);
+    this.mensaje="";
+  }
+
   consultar(uid){
-    console.log("este es el uid del usuario"+uid);
+    // console.log("este es el uid del usuario "+uid);
+    // this._ls.cargarMsjUid(uid);
+    this.uid=uid;
+    // console.log("uid enviado"+this.uid);
+    this._ls.cargarMsjUid(this.uid).subscribe( ()=>{
+        setTimeout( ()=>this.elemento.scrollTop=this.elemento.scrollHeight, 50);
+      });
   }
 
 }

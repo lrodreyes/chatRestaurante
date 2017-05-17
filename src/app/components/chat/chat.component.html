@@ -24,11 +24,21 @@
 	 	</div>
 	</div>
 
+	<ng-container *ngIf="_ls.user!='administrador'">
 	<input [(ngModel)]="mensaje"
 	        name="mensaje"
 	        (keyup.enter)="enviar()"
 	        placeholder="Deja tu mensaje..."
 					class="grey darken-4 center white-text">
 	<a class="waves-effect waves-light btn-large red darken-4" (click)="enviar()">Enviar</a>
+	</ng-container>
+	<ng-container *ngIf="_ls.user=='administrador'">
+		<input [(ngModel)]="mensaje"
+	        name="mensaje"
+	        (keyup.enter)="enviarAdm()"
+	        placeholder="Deja tu mensaje..."
+					class="grey darken-4 center white-text">
+		<a class="waves-effect waves-light btn-large red darken-4" (click)="enviarAdm()">Enviar</a>
+	</ng-container>
 </div>
 </div>

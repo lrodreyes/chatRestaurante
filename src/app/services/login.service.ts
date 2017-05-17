@@ -73,6 +73,15 @@ export class LoginService {
     this.mensajes.push(mensaje);
   }
 
+  agregarMensajeAdm(text:string, uid){
+    let mensaje={
+      nombre: 'administrador',
+      mensaje:text
+    }
+
+   this.db.list('/chats/'+uid).push(mensaje);
+  }
+
   cargarMensajes(){
     this.mensajes = this.db.list('/chats/'+this.user.user.uid,{
       query: {
@@ -80,6 +89,16 @@ export class LoginService {
       }
     });
 
+    console.log(this.mensajes);
+    return this.mensajes;
+  }
+
+  cargarMsjUid(uid){
+    this.mensajes = this.db.list('/chats/'+uid,{
+      query: {
+        orderByKey:true
+      }
+    });
     console.log(this.mensajes);
     return this.mensajes;
   }
