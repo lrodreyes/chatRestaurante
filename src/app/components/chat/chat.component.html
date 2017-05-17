@@ -3,7 +3,8 @@
 <ng-container *ngIf="_ls.user=='administrador'">
 	<div class="listado-chats" >
 		<div *ngFor="let chat of _ls.chats | async">
-			{{chat |json}}
+		<a (click)="consultar(chat.uid)">{{chat.nombre |json}}</a>
+			
 		</div>
 	</div>
 </ng-container>

@@ -85,7 +85,7 @@ export class LoginService {
   }
 
   cargarChats(){
-    this.chats = this.db.list('/chats',{
+    this.chats = this.db.list('/usuarios/',{
       query:{
         orderByKey:true
       }

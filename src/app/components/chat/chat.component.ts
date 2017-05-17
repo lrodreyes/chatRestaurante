@@ -41,4 +41,8 @@ export class ChatComponent implements OnInit {
   	this.mensaje="";
   }
 
+  consultar(uid){
+    console.log("este es el uid del usuario"+uid);
+  }
+
 }
