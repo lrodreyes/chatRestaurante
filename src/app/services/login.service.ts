@@ -60,6 +60,7 @@ export class LoginService {
     this.user = null;
     /*con la funcion signOut estamos cerrando la sesión del usuario y nos mandara un mensaje en la
     consola que nos indique que la sesión fue cerrada exitosamente */
+    this.mensajes="";
     this.afAuth.auth.signOut().then(function(){
       console.log("sign-out successful");
     });
