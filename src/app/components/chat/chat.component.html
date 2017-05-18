@@ -22,10 +22,11 @@ en este caso que _ls.user sea igual a administrador-->
 <div class="container-chat">
 	<div id="app-mensajes" class="app-mensajes grey lighten-1">
 		<!--En esta linea ngFor nos va a permitir obtener los mensajes de la base de datos
-		 que se han enviado del lado del usuario para poder visualizarlos y de igual forma se utiliza el pip-->
+		 que se han enviado del lado del usuario para poder visualizarlos y de igual forma se utiliza el pip
+	 	 async para que se muestra la información sin basura -->
 		<div *ngFor="let mensaje of _ls.mensajes | async">
-	    <!-- <span class="badge" [ngClass]="{ 'badge-primary': _cs.usuario.uid == chat.uid,
-	    'badge-success': _cs.usuario.uid != chat.uid }"> -->
+	    <!--En la etiqueta span y en la etiqueta p, se estaran mostrando el nombre del usuario y
+			el mensaje que esta enviando o recibiendo -->
      	<span class="red darken-2 white-text">
 	      {{ mensaje.nombre }}
 	    </span>
@@ -34,15 +35,21 @@ en este caso que _ls.user sea igual a administrador-->
 	    </p>
 	 	</div>
 	</div>
-
+<!--Este contenedor nos permite enviarle el mensaje al administrador-->
 	<ng-container *ngIf="_ls.user!='administrador'">
+		<!--ngModel nos permite que todo lo que se esta enviando mediante el input, se va a almacenar
+		en una variable llamada mensaje, la cuál va a ser utilizada en el código de javascript-->
 	<input [(ngModel)]="mensaje"
 	        name="mensaje"
 	        (keyup.enter)="enviar()"
 	        placeholder="Deja tu mensaje..."
 					class="grey darken-4 center white-text">
+	<!--Con el metodo click que se esta utilizando en la etiqueta a, estamos indicando una llamada a
+	una función que se encuentra en el javascript para enviar los mensajes a la base de datos-->
 	<a class="waves-effect waves-light btn-large red darken-4" (click)="enviar()">Enviar</a>
 	</ng-container>
+<!--En este contenedor esta haciendo lo mismo que el anterior, pero en este caso son los Mensajes
+que estara enviando el administrador en respuesta a los chat de cada persona-->
 	<ng-container *ngIf="_ls.user=='administrador'">
 		<input [(ngModel)]="mensaje"
 	        name="mensaje"
