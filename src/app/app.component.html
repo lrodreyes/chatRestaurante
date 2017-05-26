@@ -1,33 +1,39 @@
 <div class="miContainer">
 	<app-navbar></app-navbar>
 
-	 <div class="right-align" *ngIf="!administrador && !_ls.user">
+	<div class="right-align" *ngIf="!administrador && !_ls.user">
+		 <!--Con el metodo click en esta etiqueta estamos indicando que al presionar el boton
+	   tendra que hacer una llamada a la función loginAdministrador() para poder visualizar
+	 	 la ventana del administrador que es en la cual va a poder responder los mensajes-->
 		<a class="waves-effect waves-light btn-large red darken-4" (click)="loginAdministrador()">Administrador</a>
 	</div>
-
+	 <!--En este contenerdor estamos indicando que se tiene que cumplir la condicional que en este caso
+		se a un usuario el que la utilice, para mostrar cierto tipo de contenido-->
 	<ng-container *ngIf="!_ls.user">
 		<div class="container-column">
 			<h1 class="white-text">Ingresa y dejanos saber tus dudas</h1>
+			<!--Por medio del metodo click estamos haciendo un llamado a la función login, la cual nos
+			nos va a permitir logearnos por medio de nuestra cuenta de gmail-->
 			<a class="waves-effect waves-light btn-large red darken-4" (click)="login()">Login</a>
 		</div>
 	</ng-container>
 
 	<ng-container *ngIf="_ls.user">
 		<div class="container-column">
+			<!--En esta parte estamos indicando que por medio del llamado a la función logout vamos a
+		   cerrar la sesión del usuario que este dejando su mensaje-->
 			<a class="waves-effect waves-light btn-large red darken-4" (click)="logout()">Logout</a>
 			<div class="chat-window animated fadeIn fast">
 				<h3 class="white-text center">Chatea con nosotros</h3>
+				<!--Esta directiva nos permite lograr que por medio de componentes, puedas ir fraccionando
+					proyecto en este caso, con la etiqueta app-chat estamos indicando que en esa seccion de la
+				  pagina va a estar contenido la sección de los mensajes y por medio de otro componente se
+				realizara toda la visulización y estructura del chat-->
 				<app-chat></app-chat>
 			</div>
 		</div>
 	</ng-container>
-
+	<app-map class="app-map"></app-map>	
 </div>
 
 
-<!--
- <ul>
-  <li class="text" *ngFor="let comentario of comentarios | async">
-    {{comentario | json}}
-  </li>
-</ul> -->

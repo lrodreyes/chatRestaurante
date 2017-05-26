@@ -6,6 +6,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { firebaseConf } from '../environments/firebase.conf';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 
 //SERVICIOS
@@ -14,13 +15,14 @@ import { LoginService } from './services/login.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChatComponent } from './components/chat/chat.component';
-import { AdministradorComponent } from './components/administrador/administrador.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ChatComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,10 @@ import { AdministradorComponent } from './components/administrador/administrador
     HttpModule,
     AngularFireModule.initializeApp(firebaseConf),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAtCoRjmmWPrk7U6uXVtR6A9Pm-2_c-tFo'
+    })
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

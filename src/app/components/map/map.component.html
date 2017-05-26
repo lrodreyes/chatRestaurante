@@ -1,0 +1,14 @@
+
+<h1 class="center-align">{{ title }}</h1>
+<div class="center-align">
+  <a class="waves-effect waves-light btn" href="https://www.google.com.mx/maps/place/18%C2%B048'56.9%22N+98%C2%B057'11.6%22W/@18.8157338,-98.9533363,19.75z/data=!4m5!3m4!1s0x0:0x0!8m2!3d18.815809!4d-98.953232">Ver en google maps</a>
+</div>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+
+<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+  <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [label]="label" ></sebm-google-map-marker>
+</sebm-google-map>
+
+
