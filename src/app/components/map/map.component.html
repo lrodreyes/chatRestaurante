@@ -1,14 +1,14 @@
 
 <h1 class="center-align">{{ title }}</h1>
 <div class="center-align">
+<!--Aquí por medio de un boton con la referencía a la localización del restaurante por medio
+de google maps estamos haciendo una ampliación del mapa con el punto de ubicación-->
   <a class="waves-effect waves-light btn" href="https://www.google.com.mx/maps/place/18%C2%B048'56.9%22N+98%C2%B057'11.6%22W/@18.8157338,-98.9533363,19.75z/data=!4m5!3m4!1s0x0:0x0!8m2!3d18.815809!4d-98.953232">Ver en google maps</a>
 </div>
 
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-
+<!--Estas son etiqueta contenedora con la cual estamos indicando que vamos a hacer uso de la API
+de google le enviaremos de java script a la parte visual ciertas variables como lo es la latitud,
+longitud y el zoom de la localización que queremos que se va a visualizar-->
 <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
   <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [label]="label" ></sebm-google-map-marker>
 </sebm-google-map>
-
-
